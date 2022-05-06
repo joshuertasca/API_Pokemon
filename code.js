@@ -187,7 +187,7 @@ function verificarsimilitud(nombreBuscar){
                     (element==palabra4[x])?letrasiguales++:""
                 });
 
-                if ((letrasiguales> palabra2.length-3 && ((palabra1.length > palabra2.length-3)&&(palabra1.length < palabra2.length+3))&&letrasiguales>=3)||letrasiguales>=4) {
+                if ((letrasiguales> palabra2.length-3 && ((palabra1.length > palabra2.length-3)&&(palabra1.length < palabra2.length+3))&&letrasiguales>=3)||letrasiguales>4) {
                    
     
                         pokemonessimilares[Npokemones]=palabra2
