@@ -16,8 +16,8 @@ function consumir(endpoint,poderMinimo) {
                             pokemones_listados++
                             document.querySelector("#vista").innerHTML += `
                                 <div class="col">
-                                    <div class="card">
-                                    <img src="${data_api2.sprites.other.home.front_default}" class="card-img-top" alt="...">
+                                    <div class="card border border-5 border-dark bg-rojo ">
+                                    <img src="${data_api2.sprites.other.home.front_default}" class=" card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">${data_api2.name}</h5>
                                         </div>
@@ -68,7 +68,17 @@ function buscador(endpoint_buscar) {
             setTimeout(() => {
                 
                 if(pokemonessimilares.length==0){
-                alert("este pokemon no existe")
+                   
+                    Swal.fire({
+                        
+                        imageUrl: 'pokedex.png',
+                        imageWidth: 500,
+                        imageHeight: 500,
+                        imageAlt: 'Custom image',
+                        background: '#f0ffff00',
+                        showConfirmButton: false,
+                        timer: 2500
+                      })
                 
             }else{
                 document.querySelector("#vista").innerHTML = ``
@@ -78,12 +88,14 @@ function buscador(endpoint_buscar) {
                 consumo_api.then(respuesta_api => respuesta_api.json())
                     .then(data_api => {
                         var imagen = data_api.sprites.other.home.front_default
+                        
                         if (data_api.sprites.other.home.front_default == null) {
                             imagen =data_api.sprites.front_shiny
+                            // imagen =data_api.sprites.other.official-artwork.front_default
                         }
                         document.querySelector("#vista").innerHTML += `
                         <div class="col">
-                            <div class="card">
+                            <div class="card border border-5 border-dark bg-rojo ">
                             <img src="${imagen}" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">${data_api.name}</h5>

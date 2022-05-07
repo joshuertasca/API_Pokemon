@@ -1,0 +1,19 @@
+
+.logoNav{
+    height: 100px;
+}
+
+.bg-rojo  {
+    background-color: #ff0000;
+}
+
+.paginacion {
+    background-color: #ff0000;
+    margin-top: 300px;
+}
+
+.pokedex{
+    height: 100px;
+    top: 83px;
+    left: 45%;
+}
